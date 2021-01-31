@@ -40,6 +40,8 @@ final class ItemsApiService {
         let task = session.dataTask(with: request){data, resp, err in
             if err == nil {
                 errorHandler(nil)
+            } else {
+                errorHandler(err?.localizedDescription)
             }
             
         }

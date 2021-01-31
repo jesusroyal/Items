@@ -99,10 +99,20 @@ final class AddItemViewController: UIViewController {
         
         if let item = getNewItem() {
             presentLoadingAlert()
-            ItemsApiService.shared.add(item: item) { (arh) in
-                DispatchQueue.main.async {
-                    self.dismissLoadingAlert()
+            ItemsApiService.shared.add(item: item) { (error) in
+                if let error = error {
+                    DispatchQueue.main.async {
+                        self.dismiss(animated: true) {
+                            self.showError(error)
+                        }
+                        
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        self.dismissLoadingAlert()
+                    }
                 }
+                
             }
         }
     }
