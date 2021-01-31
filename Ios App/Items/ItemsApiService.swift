@@ -15,11 +15,13 @@ final class ItemsApiService {
     private let url = URL(string: "http://127.0.0.1:8080/items")!
     private let session = URLSession.shared
     
-    func fetchItems(completionHandler: @escaping ([Item]?) -> Void){
+    func fetchItems(completionHandler: @escaping ([Item]?) -> Void, errorHandler: ((String) -> Void)? = nil){
         let task = session.dataTask(with: url){ (data, resp, err) in
             
-            if let _ = err {
-                completionHandler(nil)
+            if let err = err {
+                if let handler = errorHandler {
+                    handler(err.localizedDescription)
+                }
                 return
             }
             
