@@ -34,11 +34,7 @@ final class ItemsApiService {
     }
     
     func add(item: Item, errorHandler: @escaping (String?) -> Void){
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.httpBody = try! JSONEncoder().encode(item)
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        let request = getPostRequest(with: item)
         let task = session.dataTask(with: request){data, resp, err in
             if err == nil {
                 errorHandler(nil)
@@ -60,5 +56,14 @@ final class ItemsApiService {
         let task = session.dataTask(with: request)
         task.resume()
         
+    }
+    
+    private func getPostRequest(with item: Item) -> URLRequest {
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.httpBody = try! JSONEncoder().encode(item)
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        return request
     }
 }
