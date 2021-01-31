@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC4E573D25C597BE00AC4A73 /* ITColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4E573C25C597BE00AC4A73 /* ITColors.swift */; };
 		ECBF474025B331810059B73A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBF473F25B331810059B73A /* AppDelegate.swift */; };
 		ECBF474225B331810059B73A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBF474125B331810059B73A /* SceneDelegate.swift */; };
 		ECBF474725B331810059B73A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECBF474525B331810059B73A /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EC4E573C25C597BE00AC4A73 /* ITColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITColors.swift; sourceTree = "<group>"; };
 		ECBF473C25B331810059B73A /* Items.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Items.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECBF473F25B331810059B73A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ECBF474125B331810059B73A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +45,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EC4E573B25C597AD00AC4A73 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				EC4E573C25C597BE00AC4A73 /* ITColors.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		EC8E318525BF24C200A1ECD5 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -79,11 +89,12 @@
 		ECBF473E25B331810059B73A /* Items */ = {
 			isa = PBXGroup;
 			children = (
+				EC4E573B25C597AD00AC4A73 /* Utils */,
 				ECBF473F25B331810059B73A /* AppDelegate.swift */,
 				ECBF474125B331810059B73A /* SceneDelegate.swift */,
 				ECBF474525B331810059B73A /* Main.storyboard */,
-				EC8E318625BF24DA00A1ECD5 /* Model */,
 				EC8E318525BF24C200A1ECD5 /* ViewControllers */,
+				EC8E318625BF24DA00A1ECD5 /* Model */,
 				ECBF475725B331E20059B73A /* ItemsApiService.swift */,
 				ECBF474825B331820059B73A /* Assets.xcassets */,
 				ECBF474A25B331820059B73A /* LaunchScreen.storyboard */,
@@ -164,6 +175,7 @@
 			files = (
 				ECBF475825B331E20059B73A /* ItemsApiService.swift in Sources */,
 				ECBF475525B331BD0059B73A /* HomeTableViewController.swift in Sources */,
+				EC4E573D25C597BE00AC4A73 /* ITColors.swift in Sources */,
 				ECBF474025B331810059B73A /* AppDelegate.swift in Sources */,
 				ECBF475E25B33A1A0059B73A /* AddItemViewController.swift in Sources */,
 				ECBF475B25B332590059B73A /* Item.swift in Sources */,

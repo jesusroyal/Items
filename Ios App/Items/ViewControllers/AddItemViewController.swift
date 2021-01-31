@@ -43,9 +43,30 @@ final class AddItemViewController: UIViewController {
     
     private func getNewItem() -> Item? {
         let name = self.name.text!
+        if name.isEmpty {
+            showError("Введите название")
+            return nil
+        }
+        
+        let discriptionString = self.descriptionText.text!
+        if discriptionString.isEmpty {
+            showError("Введите описание")
+            return nil
+        }
+        
         let location = self.location.text!
-        let discriptionString = self.descriptionText.text
-        return Item(name: name, location: location, description: discriptionString!)
+        if location.isEmpty {
+            showError("Введите расположение")
+            return nil
+        }
+        
+        return Item(name: name, location: location, description: discriptionString)
+    }
+    
+    private func showError(_ error: String){
+        let alert = UIAlertController(title: "Ошибка", message: error, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ок", style: .default, handler: nil))
+        present(alert, animated: true)
     }
     
     private func presentLoadingAlert() {
