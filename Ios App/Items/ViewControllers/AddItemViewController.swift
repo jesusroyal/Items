@@ -30,7 +30,6 @@ final class AddItemViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        // Do any additional setup after loading the view.
     }
     
     // MARK: - Public Methods
@@ -39,6 +38,12 @@ final class AddItemViewController: UIViewController {
     private func setupView(){
         addButton.backgroundColor = Colors.green
         addButton.layer.cornerRadius = addButton.frame.height / 2
+        
+        descriptionText.backgroundColor = Colors.lightGreen
+        descriptionText.layer.cornerRadius = 5.0
+        
+        name.backgroundColor = Colors.lightGreen
+        location.backgroundColor = Colors.lightGreen
     }
     
     private func getNewItem() -> Item? {
