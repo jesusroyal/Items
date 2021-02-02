@@ -30,6 +30,7 @@ final class AddItemViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        setTextFieldDelegates()
     }
     
     // MARK: - Public Methods
@@ -44,6 +45,12 @@ final class AddItemViewController: UIViewController {
         name.backgroundColor = Colors.lightGreen
         location.backgroundColor = Colors.lightGreen
         descriptionOfItem.backgroundColor = Colors.lightGreen
+    }
+    
+    private func setTextFieldDelegates(){
+        name.delegate = self
+        location.delegate = self
+        descriptionOfItem.delegate = self
     }
     
     private func getNewItem() -> Item? {
@@ -122,4 +129,62 @@ final class AddItemViewController: UIViewController {
         }
     }
 
+}
+
+//MARK: -UITextFieldDelegate + Animation
+
+extension AddItemViewController: UITextFieldDelegate {
+
+    private func swapFirstResponder(_ firstTextField: UITextField, for secondTextField: UITextField) {
+        firstTextField.resignFirstResponder()
+        secondTextField.becomeFirstResponder()
+    }
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        switch textField {
+        case name:
+            swapFirstResponder(textField, for: descriptionOfItem)
+            return false
+        case descriptionOfItem:
+            swapFirstResponder(textField, for: location)
+            return false
+
+        case location:
+            textField.resignFirstResponder()
+            return false
+        default:
+            return true
+
+        }
+    }
+
+    private func moveViewToTextField(_ textField: UITextField) {
+        UIView.animate(withDuration: 0.2) {
+            self.view.frame.origin.y -= (textField.frame.origin.y - self.name.frame.origin.y)
+        }
+    }
+
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        switch textField {
+        case name:
+            return
+        case descriptionOfItem:
+            moveViewToTextField(descriptionOfItem)
+
+        case location:
+            moveViewToTextField(location)
+            return
+        default:
+            return
+        }
+    }
+
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if self.view.frame.origin.y != 0 {
+            UIView.animate(withDuration: 0.2) {
+                self.view.frame.origin.y = 0
+            }
+
+        }
+    }
 }
