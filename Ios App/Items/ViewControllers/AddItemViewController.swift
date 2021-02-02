@@ -21,9 +21,6 @@ final class AddItemViewController: UIViewController {
     var addComplete: (() -> Void)?
     
     // MARK: - Private Properties
-    
-    private var isLoading = false
-    
     // MARK: - Initializers
     // MARK: - Lifecycle
     
@@ -79,30 +76,6 @@ final class AddItemViewController: UIViewController {
         let alert = UIAlertController(title: "Ошибка", message: error, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ок", style: .default, handler: nil))
         present(alert, animated: true)
-    }
-    
-    private func presentLoadingAlert() {
-        let alert = UIAlertController(title: nil, message: "Loading", preferredStyle: .alert)
-
-        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
-        loadingIndicator.hidesWhenStopped = true
-        loadingIndicator.style = UIActivityIndicatorView.Style.medium
-        loadingIndicator.startAnimating()
-
-        alert.view.addSubview(loadingIndicator)
-        isLoading = true
-        present(alert, animated: true)
-    }
-    
-    private func dismissLoadingAlert() {
-        dismiss(animated: true) {
-            self.isLoading = false
-            self.dismiss(animated: true, completion: {
-                if self.addComplete != nil {
-                    self.addComplete!()
-                }
-            })
-        }
     }
     
     // MARK: - IBActions
