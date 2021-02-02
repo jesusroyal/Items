@@ -8,6 +8,7 @@
 import UIKit
 
 extension UIViewController {
+    
     var loadingAlert: UIAlertController {
         let alert = UIAlertController(title: nil, message: "Loading", preferredStyle: .alert)
 
@@ -20,6 +21,7 @@ extension UIViewController {
         
         return alert
     }
+    
     func presentLoadingAlert(completion: (() -> Void)? = nil) {
         if let _ = self.presentedViewController {
             return
