@@ -15,7 +15,8 @@ final class HomeTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         getItems()
-        self.title = "Items"
+        setupView()
+       
     }
     
     private func getItems(){
@@ -26,6 +27,12 @@ final class HomeTableViewController: UITableViewController {
                 self.tableView.reloadData()
             }
         }
+    }
+    
+    private func setupView(){
+        self.title = "Items"
+        
+        self.navigationController?.navigationBar.tintColor = Colors.green
     }
 
     // MARK: - Table view data source
