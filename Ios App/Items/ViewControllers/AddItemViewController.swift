@@ -13,7 +13,7 @@ final class AddItemViewController: UIViewController {
     
     @IBOutlet weak var name: UITextField!
     @IBOutlet weak var location: UITextField!
-    @IBOutlet weak var descriptionText: UITextView!
+    @IBOutlet weak var descriptionOfItem: UITextField!
     @IBOutlet weak var addButton: UIButton!
     
     // MARK: - Public Properties
@@ -39,11 +39,11 @@ final class AddItemViewController: UIViewController {
         addButton.backgroundColor = Colors.green
         addButton.layer.cornerRadius = addButton.frame.height / 2
         
-        descriptionText.backgroundColor = Colors.lightGreen
-        descriptionText.layer.cornerRadius = 5.0
+        
         
         name.backgroundColor = Colors.lightGreen
         location.backgroundColor = Colors.lightGreen
+        descriptionOfItem.backgroundColor = Colors.lightGreen
     }
     
     private func getNewItem() -> Item? {
@@ -53,7 +53,7 @@ final class AddItemViewController: UIViewController {
             return nil
         }
         
-        let discriptionString = self.descriptionText.text!
+        let discriptionString = self.descriptionOfItem.text!
         if discriptionString.isEmpty {
             showError("Введите описание")
             return nil
