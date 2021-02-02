@@ -20,11 +20,14 @@ final class HomeTableViewController: UITableViewController {
     }
     
     private func getItems(){
+        self.presentLoadingAlert()
         ItemsApiService.shared.fetchItems { (items) in
             guard let items = items else { return }
             DispatchQueue.main.async {
                 self.items = items
-                self.tableView.reloadData()
+                self.dismissLoadingAlert {
+                    self.tableView.reloadData()
+                }
             }
         }
     }
