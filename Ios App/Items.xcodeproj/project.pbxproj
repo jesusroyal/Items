@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		EC4E573D25C597BE00AC4A73 /* ITColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4E573C25C597BE00AC4A73 /* ITColors.swift */; };
+		EC7D559225D07FA30074E1C0 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7D559125D07FA30074E1C0 /* DetailViewController.swift */; };
 		EC8E0FB225C9780A00C9176B /* UIViewController+LoadingAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8E0FB125C9780A00C9176B /* UIViewController+LoadingAlert.swift */; };
 		ECBF474025B331810059B73A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBF473F25B331810059B73A /* AppDelegate.swift */; };
 		ECBF474225B331810059B73A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBF474125B331810059B73A /* SceneDelegate.swift */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		EC4E573C25C597BE00AC4A73 /* ITColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITColors.swift; sourceTree = "<group>"; };
+		EC7D559125D07FA30074E1C0 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		EC8E0FB125C9780A00C9176B /* UIViewController+LoadingAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+LoadingAlert.swift"; sourceTree = "<group>"; };
 		ECBF473C25B331810059B73A /* Items.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Items.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECBF473F25B331810059B73A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 			children = (
 				ECBF475425B331BD0059B73A /* HomeTableViewController.swift */,
 				ECBF475D25B33A1A0059B73A /* AddItemViewController.swift */,
+				EC7D559125D07FA30074E1C0 /* DetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -137,6 +140,7 @@
 				TargetAttributes = {
 					ECBF473B25B331810059B73A = {
 						CreatedOnToolsVersion = 12.3;
+						LastSwiftMigration = 1240;
 					};
 				};
 			};
@@ -176,6 +180,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC7D559225D07FA30074E1C0 /* DetailViewController.swift in Sources */,
 				ECBF475825B331E20059B73A /* ItemsApiService.swift in Sources */,
 				ECBF475525B331BD0059B73A /* HomeTableViewController.swift in Sources */,
 				EC4E573D25C597BE00AC4A73 /* ITColors.swift in Sources */,
@@ -330,6 +335,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4S3J7NRC9R;
 				INFOPLIST_FILE = Items/Info.plist;
@@ -339,6 +345,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = mkshev.Items;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -349,6 +356,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4S3J7NRC9R;
 				INFOPLIST_FILE = Items/Info.plist;

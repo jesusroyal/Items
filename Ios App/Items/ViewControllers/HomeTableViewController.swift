@@ -64,6 +64,11 @@ final class HomeTableViewController: UITableViewController {
         }
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        performSegue(withIdentifier: "showDetail", sender: items[indexPath.row])
+    }
+    
 
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -72,6 +77,14 @@ final class HomeTableViewController: UITableViewController {
             destination.addComplete = { [weak self] in
                 self?.getItems()
             }
+        }
+        if segue.identifier == "showDetail" {
+            guard let destination = segue.destination as? DetailViewController,
+                  let item = sender as? Item else { return }
+            
+            destination.item = item
+            
+            
         }
     }
 }
