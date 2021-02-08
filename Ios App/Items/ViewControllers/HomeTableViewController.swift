@@ -81,7 +81,16 @@ final class HomeTableViewController: UITableViewController {
         if segue.identifier == "showDetail" {
             guard let destination = segue.destination as? DetailViewController,
                   let item = sender as? Item else { return }
-            
+            destination.didEdit = { [weak self] in
+                ItemsApiService.shared.fetchItems { (items) in
+                    guard let items = items else { return }
+                    DispatchQueue.main.async {
+                        self?.items = items
+                        self?.tableView.reloadData()
+                        
+                    }
+                }
+            }
             destination.item = item
             
             

@@ -34,16 +34,41 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W3K-u5-pKq">
+                                <rect key="frame" x="15" y="108" width="345" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aV0-g9-OPM">
+                                <rect key="frame" x="15" y="162" width="345" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S11-t5-kFt">
+                                <rect key="frame" x="15" y="206" width="345" height="172"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bei-GX-v1t"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="sbT-qn-98e" firstAttribute="leading" secondItem="bei-GX-v1t" secondAttribute="leading" constant="15" id="3Ac-ZF-fcp"/>
+                            <constraint firstItem="bei-GX-v1t" firstAttribute="trailing" secondItem="S11-t5-kFt" secondAttribute="trailing" constant="15" id="3eH-LK-wWY"/>
                             <constraint firstItem="xy8-if-c0m" firstAttribute="top" secondItem="bei-GX-v1t" secondAttribute="top" constant="20" id="72D-mL-MBk"/>
                             <constraint firstItem="xy8-if-c0m" firstAttribute="leading" secondItem="bei-GX-v1t" secondAttribute="leading" constant="15" id="9mV-gK-4HJ"/>
+                            <constraint firstItem="W3K-u5-pKq" firstAttribute="top" secondItem="bei-GX-v1t" secondAttribute="top" constant="20" id="AEk-Wn-gmT"/>
                             <constraint firstItem="sbT-qn-98e" firstAttribute="top" secondItem="D2i-Zy-wKz" secondAttribute="bottom" constant="10" id="B4Y-q1-bAK"/>
+                            <constraint firstItem="bei-GX-v1t" firstAttribute="trailing" secondItem="aV0-g9-OPM" secondAttribute="trailing" constant="15" id="HCe-zq-OC0"/>
+                            <constraint firstItem="aV0-g9-OPM" firstAttribute="leading" secondItem="bei-GX-v1t" secondAttribute="leading" constant="15" id="KgC-uG-lHn"/>
                             <constraint firstItem="bei-GX-v1t" firstAttribute="trailing" secondItem="D2i-Zy-wKz" secondAttribute="trailing" constant="15" id="NcC-7j-qwf"/>
+                            <constraint firstItem="W3K-u5-pKq" firstAttribute="leading" secondItem="bei-GX-v1t" secondAttribute="leading" constant="15" id="a5n-yH-tiP"/>
+                            <constraint firstItem="bei-GX-v1t" firstAttribute="trailing" secondItem="W3K-u5-pKq" secondAttribute="trailing" constant="15" id="bCF-L0-Ipg"/>
+                            <constraint firstItem="aV0-g9-OPM" firstAttribute="top" secondItem="W3K-u5-pKq" secondAttribute="bottom" constant="20" id="hme-cB-bvj"/>
+                            <constraint firstItem="S11-t5-kFt" firstAttribute="top" secondItem="aV0-g9-OPM" secondAttribute="bottom" constant="10" id="lLp-cZ-hkk"/>
                             <constraint firstItem="bei-GX-v1t" firstAttribute="trailing" secondItem="sbT-qn-98e" secondAttribute="trailing" constant="15" id="mWx-N7-nOL"/>
+                            <constraint firstItem="S11-t5-kFt" firstAttribute="leading" secondItem="bei-GX-v1t" secondAttribute="leading" constant="15" id="mZ5-Ms-g75"/>
+                            <constraint firstItem="bei-GX-v1t" firstAttribute="bottom" secondItem="S11-t5-kFt" secondAttribute="bottom" constant="400" id="pil-Vm-9O3"/>
                             <constraint firstItem="bei-GX-v1t" firstAttribute="bottom" secondItem="sbT-qn-98e" secondAttribute="bottom" id="rbZ-He-k1B"/>
                             <constraint firstItem="D2i-Zy-wKz" firstAttribute="leading" secondItem="bei-GX-v1t" secondAttribute="leading" constant="15" id="u28-GZ-PCd"/>
                             <constraint firstItem="D2i-Zy-wKz" firstAttribute="top" secondItem="xy8-if-c0m" secondAttribute="bottom" constant="20" id="vbY-NJ-rmm"/>
@@ -51,16 +76,20 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="NQj-UJ-gqQ">
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="TbI-Be-LTS">
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="TbI-Be-LTS">
                             <connections>
                                 <action selector="didTapEdit:" destination="EwU-vs-l6I" id="qFV-O6-DVc"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="editButton" destination="TbI-Be-LTS" id="0Xa-0s-cAC"/>
                         <outlet property="itemDescription" destination="sbT-qn-98e" id="9U7-LE-hd5"/>
+                        <outlet property="itemDescriptionField" destination="S11-t5-kFt" id="xwI-yY-eoe"/>
                         <outlet property="itemLocation" destination="D2i-Zy-wKz" id="PSh-EB-cvw"/>
+                        <outlet property="itemLocationField" destination="aV0-g9-OPM" id="wYZ-pC-8IV"/>
                         <outlet property="itemTitle" destination="xy8-if-c0m" id="sJf-BP-faK"/>
+                        <outlet property="itemTitleField" destination="W3K-u5-pKq" id="1Gi-MC-LPX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EnL-x2-xF0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

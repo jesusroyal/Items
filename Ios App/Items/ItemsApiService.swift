@@ -55,6 +55,24 @@ final class ItemsApiService {
         
         let task = session.dataTask(with: request)
         task.resume()
+    }
+    
+    func update(item: Item, errorHandler: ((String?) -> Void)? = nil){
+        var request = URLRequest(url: url)
+        request.httpMethod = "PUT"
+        request.httpBody = try! JSONEncoder().encode(item)
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        
+        let task = session.dataTask(with: request){data, resp, err in
+            if err == nil {
+                errorHandler?(nil)
+            } else {
+                errorHandler?(err?.localizedDescription)
+            }
+            
+        }
+        task.resume()
         
     }
     
