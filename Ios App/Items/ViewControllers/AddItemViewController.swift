@@ -94,7 +94,9 @@ final class AddItemViewController: UIViewController {
                     }
                 } else {
                     DispatchQueue.main.async {
-                        self.dismissLoadingAlert()
+                        self.dismissLoadingAlert {
+                            self.addComplete?()
+                        }
                     }
                 }
                 
