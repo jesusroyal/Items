@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		EC4E573D25C597BE00AC4A73 /* ITColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4E573C25C597BE00AC4A73 /* ITColors.swift */; };
+		EC61BD8925EECD2D001B2E1E /* SetupRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC61BD8825EECD2D001B2E1E /* SetupRouter.swift */; };
+		EC61BD8C25EECE9C001B2E1E /* SetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC61BD8B25EECE9C001B2E1E /* SetupViewController.swift */; };
 		EC7D559225D07FA30074E1C0 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7D559125D07FA30074E1C0 /* DetailViewController.swift */; };
 		EC8E0FB225C9780A00C9176B /* UIViewController+LoadingAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8E0FB125C9780A00C9176B /* UIViewController+LoadingAlert.swift */; };
 		ECBF474025B331810059B73A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBF473F25B331810059B73A /* AppDelegate.swift */; };
@@ -23,6 +25,8 @@
 
 /* Begin PBXFileReference section */
 		EC4E573C25C597BE00AC4A73 /* ITColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITColors.swift; sourceTree = "<group>"; };
+		EC61BD8825EECD2D001B2E1E /* SetupRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupRouter.swift; sourceTree = "<group>"; };
+		EC61BD8B25EECE9C001B2E1E /* SetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupViewController.swift; sourceTree = "<group>"; };
 		EC7D559125D07FA30074E1C0 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		EC8E0FB125C9780A00C9176B /* UIViewController+LoadingAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+LoadingAlert.swift"; sourceTree = "<group>"; };
 		ECBF473C25B331810059B73A /* Items.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Items.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -64,6 +68,7 @@
 				ECBF475425B331BD0059B73A /* HomeTableViewController.swift */,
 				ECBF475D25B33A1A0059B73A /* AddItemViewController.swift */,
 				EC7D559125D07FA30074E1C0 /* DetailViewController.swift */,
+				EC61BD8B25EECE9C001B2E1E /* SetupViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -102,6 +107,7 @@
 				EC8E318525BF24C200A1ECD5 /* ViewControllers */,
 				EC8E318625BF24DA00A1ECD5 /* Model */,
 				ECBF475725B331E20059B73A /* ItemsApiService.swift */,
+				EC61BD8825EECD2D001B2E1E /* SetupRouter.swift */,
 				ECBF474825B331820059B73A /* Assets.xcassets */,
 				ECBF474A25B331820059B73A /* LaunchScreen.storyboard */,
 				ECBF474D25B331820059B73A /* Info.plist */,
@@ -182,9 +188,11 @@
 			files = (
 				EC7D559225D07FA30074E1C0 /* DetailViewController.swift in Sources */,
 				ECBF475825B331E20059B73A /* ItemsApiService.swift in Sources */,
+				EC61BD8925EECD2D001B2E1E /* SetupRouter.swift in Sources */,
 				ECBF475525B331BD0059B73A /* HomeTableViewController.swift in Sources */,
 				EC4E573D25C597BE00AC4A73 /* ITColors.swift in Sources */,
 				ECBF474025B331810059B73A /* AppDelegate.swift in Sources */,
+				EC61BD8C25EECE9C001B2E1E /* SetupViewController.swift in Sources */,
 				EC8E0FB225C9780A00C9176B /* UIViewController+LoadingAlert.swift in Sources */,
 				ECBF475E25B33A1A0059B73A /* AddItemViewController.swift in Sources */,
 				ECBF475B25B332590059B73A /* Item.swift in Sources */,

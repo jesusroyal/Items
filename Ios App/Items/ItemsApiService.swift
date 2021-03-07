@@ -12,11 +12,23 @@ final class ItemsApiService {
     private init() { }
     static let shared = ItemsApiService()
     
-    private let url = URL(string: "http://127.0.0.1:8080/items")!
+    private var url: String?
     private let session = URLSession.shared
     
+    private var baseURL: URL {
+        return URL(string: url!)!
+    }
+    
+    private func deleteURL(for id: UUID) -> URL {
+        URL(string: "http://\(url!)/items/\(id)")!
+    }
+    
+    func setIP(_ ip: String){
+        url = ip
+    }
+    
     func fetchItems(completionHandler: @escaping ([Item]?) -> Void, errorHandler: ((String) -> Void)? = nil){
-        let task = session.dataTask(with: url){ (data, resp, err) in
+        let task = session.dataTask(with: baseURL){ (data, resp, err) in
             
             if let err = err {
                 if let handler = errorHandler {
@@ -49,8 +61,8 @@ final class ItemsApiService {
     func delete(item: Item, completionHandler: @escaping (Bool) -> Void){
         let id = item.id
         
-        let deleteUrl = URL(string: "http://127.0.0.1:8080/items/\(id!)")!
-        var request = URLRequest(url: deleteUrl)
+        
+        var request = URLRequest(url: deleteURL(for: id!))
         request.httpMethod = "DELETE"
         
         let task = session.dataTask(with: request)
@@ -58,7 +70,7 @@ final class ItemsApiService {
     }
     
     func update(item: Item, errorHandler: ((String?) -> Void)? = nil){
-        var request = URLRequest(url: url)
+        var request = URLRequest(url: baseURL)
         request.httpMethod = "PUT"
         request.httpBody = try! JSONEncoder().encode(item)
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -77,7 +89,7 @@ final class ItemsApiService {
     }
     
     private func getPostRequest(with item: Item) -> URLRequest {
-        var request = URLRequest(url: url)
+        var request = URLRequest(url: baseURL)
         request.httpMethod = "POST"
         request.httpBody = try! JSONEncoder().encode(item)
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
